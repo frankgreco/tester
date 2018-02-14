@@ -16,7 +16,7 @@ install:
 
 .PHONY: fmt
 fmt:
-	gofmt -e -s -l -w $(ALL_SRC)
+	@gofmt -e -s -l -w $(ALL_SRC)
 
 .PHONY: binary
 binary:

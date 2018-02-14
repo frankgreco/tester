@@ -48,23 +48,23 @@ spec:
         - --prometheus.insecure_port=9000
         - --server.secure_port=8443
         - --server.insecure_port=8080
-        - --server.tls.ca_file=/etc/kanali/pki/tls.ca
-        - --server.tls.cert_file=/etc/kanali/pki/tls.cert
-        - --server.tls.key_file=/etc/kanali/pki/tls.key
+        - --server.tls.ca_file=/etc/pki/tls.ca
+        - --server.tls.cert_file=/etc/pki/tls.cert
+        - --server.tls.key_file=/etc/pki/tls.key
         - --process.log_level=debug
         ports:
         - containerPort: 8080
         - containerPort: 8443
         - containerPort: 9000
         volumeMounts:
-        - name: kanali
-          mountPath: /etc/kanali
+        - name: tester
+          mountPath: /etc/pki
       volumes:
-      - name: kanali
+      - name: tester
         projected:
           sources:
           - secret:
-              name: kanali
+              name: tester
               items:
               - key: tls.crt
                 path: pki/tls.crt
