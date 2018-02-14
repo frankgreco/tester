@@ -1,0 +1,21 @@
+# This is an example configuration file for Kanali.
+# Note that all of the following options can be specified via cli flags.
+# In addtion, JSON and YAML formats can also be used.
+
+[prometheus]
+insecure_bind_address = "0.0.0.0"
+insecure_port = 9000
+
+[server]
+insecure_bind_address = "0.0.0.0"
+insecure_port = 8080
+secure_bind_address = "0.0.0.0"
+secure_port = 8443
+
+[server.tls]
+cert_file = ""
+key_file = ""
+ca_file = ""
+
+[process]
+log_level = "debug"
