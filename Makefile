@@ -16,11 +16,11 @@ install:
 
 .PHONY: fmt
 fmt:
-	@gofmt -e -s -l -w $(ALL_SRC)
+	gofmt -e -s -l -w $(ALL_SRC)
 
 .PHONY: binary
 binary:
-	go install github.com/frankgreco/tester/cmd/tester
+	./hack/binary.sh $(VERSION)
 
 .PHONY: docker
 docker:
