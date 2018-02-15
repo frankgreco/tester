@@ -20,7 +20,7 @@ fmt:
 
 .PHONY: binary
 binary:
-	./hack/binary.sh $(VERSION)
+	go install github.com/frankgreco/tester/cmd/tester
 
 .PHONY: docker
 docker:
