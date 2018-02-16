@@ -14,10 +14,9 @@ func Dump(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
 
 	data, err := json.Marshal(apis.RequestDetails{
-		Method:  r.Method,
-		Headers: reduceMapArray(r.Header),
-		Path:    r.URL.EscapedPath(),
-		Query:   reduceMapArray(r.URL.Query()),
+		Method: r.Method,
+		Path:   r.URL.EscapedPath(),
+		Query:  reduceMapArray(r.URL.Query()),
 	})
 
 	if err != nil {
